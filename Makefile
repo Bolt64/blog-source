@@ -107,10 +107,7 @@ github: publish
 	#git push origin $(GITHUB_PAGES_BRANCH)
 	rm -rf $(GHDIR)/*
 	cp -r $(OUTPUTDIR)/* $(GHDIR)/
-	cd $(GHDIR)
-	git add -A
-	git commit -m "$(TIMESTAMP)"
-	git push
+	cd $(GHDIR);git add -A;git commit -m "Pushed at $(TIMESTAMP)";git push
 
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
