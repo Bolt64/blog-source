@@ -7,6 +7,8 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
+GHDIR=~/blog/github-output
+TIMESTAMP=`date +'%y.%m.%d %H:%M:%S'`
 
 FTP_HOST=localhost
 FTP_USER=anonymous
@@ -100,6 +102,16 @@ stopserver:
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
+github: publish
+	#ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
+	#git push origin $(GITHUB_PAGES_BRANCH)
+	rm -rf $(GHDIR)/*
+	cp -r $(OUTPUTDIR)/* $(GHDIR)/
+	cd $(GHDIR)
+	git add -A
+	git commit -m "$(TIMESTAMP)"
+	git push
+
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
@@ -117,9 +129,5 @@ s3_upload: publish
 
 cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
-
-github: publish
-	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
-	git push origin $(GITHUB_PAGES_BRANCH)
 
 .PHONY: html help clean regenerate serve serve-global devserver stopserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
