@@ -1,0 +1,361 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\usepackage[english]{babel}
+\usepackage[nottoc]{tocbibind}
+
+\usepackage{hyperref}
+\usepackage[left=3cm,right=3cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{bbm}
+
+\usepackage{titling}
+
+\newcommand{\subtitle}[1]{%
+    \posttitle{%
+        \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{exmp}[thm]{Example}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+
+\title{Weyl's equidistribution theorem for linear and quadratic polynomials}
+\author{Sayantan Khan}
+\date{July 2016}
+
+\newcommand{\vep}{\varepsilon}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\renewcommand{\Re}{\mathrm{Re}}
+\newcommand{\znz}{\mathbb{Z}/N\mathbb{Z}}
+\newcommand{\iprod}[2]{\langle #1, #2 \rangle}
+\newcommand{\indi}{\mathbbm{1}}
+
+\begin{document}
+\maketitle
+
+Given a polynomial $p \in \mathbb{R}[X]$, one can look at the orbit of the polynomial restricted to the interval $[0,1]$ The orbit is the set
+\begin{align*}
+    \{ p(n) \mod 1\ |\ n \in \mathbb{N} \}
+\end{align*}
+If $p(x)$ is the polynomial $ax$, where $a$ is an irrational number, then it's not very difficult to show that the orbit is dense in $[0,1]$. Conversely, if $a$ is rational, then the orbit is not dense. We can actually expect something stronger than density, namely equidistribution. Informally, a sequence is equidistributed if the fraction of times it appears in any subinterval is proportional to the measure of the subinterval. We'll show that if $p$ is a polynomial of degree $1$ or $2$ with an irrational leading coefficient, then the orbit is equidistributed.
+
+\section{Equidistributed sequences}
+We'll begin by formally defining what equidistributed sequences are.
+\begin{defn}
+    A sequence $\{q_n\}$ is said to be equidistributed in the interval $[a,b]$ if
+    \begin{itemize}
+        \item $q_n \in [a,b]$ for all $n \in \mathbb{N}$.
+        \item For all subintervals $[c,d]$ of $[a,b]$
+                \begin{align*}
+                    \lim_{N \to \infty} \frac{1}{N} \sum_{k=1}^{N} \indi_{[c,d]}(q_k) = \frac{d-c}{b-a}
+                \end{align*}
+                where $\indi_{[c,d]}$ is the indicator function for the interval $[c,d]$.
+    \end{itemize}
+\end{defn}
+For now, let's just focus on the interval $[0,2\pi]$, and look for equidistributed sequences in it. Observe that the second part of the above definition can be rewritten as
+\begin{align}
+    \lim\limits_{N \to \infty} \frac{1}{N} \sum_{k=1}^{N} \indi_{[c,d]}(q_k) = \frac{1}{2\pi} \int_{0}^{2\pi} \indi_{[c,d]}(x) dx \label{eq:6}
+\end{align}
+
+\section{Weyl's criterion for equidistribution}
+The above definition for equidistributed sequences makes sense (in the manner that agrees with our intuition), it is a little cumbersome to work with, since one needs to sum the indicator function of every subinterval of $[0,2\pi]$ over the entire sequence to ensure it really is equidistributed. It would be nicer if one had a simpler, but equivalent notion for equidistribution that was easier to work with. It turns out there is one.
+
+\begin{lem} \label{lem:1}
+    A subsequence $\{q_k\}$ of $[0,2\pi]$ is equidistributed iff for every continuous function $f$ on $[0,2\pi]$
+    \begin{align*}
+        \lim\limits_{N \to \infty} \frac{1}{N} \sum_{k=1}^{N} f(q_k) = \frac{1}{2\pi} \int_{0}^{2\pi} f(x)dx
+    \end{align*}
+\end{lem}
+
+\begin{proof}
+    First we'll show that if the sequence is equidistributed then the above equation is correct. Consider \emph{simple functions}\footnote{Simple functions are functions whose range is finite. These functions can be written as linear combinations of indicator functions.} on $[0,2\pi]$. Since these functions are linear combinations of indicator functions, and the indicator functions satisfy equation \ref{eq:6}, the simple functions also satisfy that equation, i.e.
+    \begin{align*}
+        \lim\limits_{N \to \infty} \frac{1}{N} \sum_{k=1}^{N} s(q_k) = \frac{1}{2\pi} \int_{0}^{2\pi} s(x)dx
+    \end{align*}
+    where $s$ is a simple function. Also, note the fact that in the compact interval $[0, 2\pi]$, for every $\vep > 0$ and for every continuous function $f$, there exists a simple function $s$, such that $\norm{f - s}_\infty < \vep$.
+    
+    Now we'll show that for every $\vep >0$, and for every continuous function $f$, there exists an $N \in \mathbb{N}$ such that for all $n > N$
+    \begin{align*}
+        \left| \frac{1}{n} \sum_{k=1}^{n} f(q_k) - \frac{1}{2\pi} \int_{0}^{2\pi} f(x)dx \right| < \vep
+    \end{align*}
+    Pick a simple function $s$ such that $\norm{f-s}_\infty < \frac{\vep}{3}$. We'll have the following inequalities
+    \begin{align}
+        \frac{1}{2\pi}\left| \int_{0}^{2\pi} f(x)dx - \int_{0}^{2\pi} s(x)dx \right| &\leq \frac{1}{2\pi} \left| \int_{0}^{2\pi} (f(x) -s(x))dx \right| \\
+        &\leq \frac{\vep}{3} \label{ineq:3}
+    \end{align}
+    And for all $n \in \mathbb{N}$
+    \begin{align}
+        \left| \frac{1}{n} \sum_{k=1}^{n} f(q_k) - \frac{1}{n} \sum_{k=1}^{n} s(q_k) \right| &\leq \left| \frac{1}{n} \sum_{k=1}^{n} f(q_k) -s(q_k) \right| \\
+        &\leq \frac{\vep}{3} \label{ineq:4}
+    \end{align}
+    Now pick an $N$ large enough such that for all $n > N$
+    \begin{align}
+        \left| \frac{1}{n} \sum_{k=1}^{n} s(q_k) - \frac{1}{2\pi} \int_{0}^{2\pi} s(x)dx \right| < \frac{\vep}{3} \label{ineq:5}
+    \end{align}
+    Adding up inequalities \ref{ineq:3}, \ref{ineq:4}, and \ref{ineq:5}, we have the inequality we wanted.
+    
+    Now for the converse statement. The key idea here is to approximate the indicator function $\indi_{[c,d]}$ with an appropriate continuous function. For a given $\vep > 0$, consider the following continuous approximation for the function $\indi_{[c,d]}$
+    \begin{align*}
+        f(x) =
+        \begin{cases} 
+        \hfill 1    \hfill & \text{$x \in (c,d)$ } \\
+        \hfill \frac{8x - 8c + \vep}{\vep} \hfill & \text{ $x \in \left[c-\frac{\vep}{8}, c \right]$ } \\
+        \hfill \frac{8d - 8x + \vep}{\vep} \hfill & \text{ $x \in \left[d, d+\frac{\vep}{8} \right]$ } \\
+        \hfill 0 \hfill & \text{otherwise}
+        \end{cases}
+    \end{align*}
+    For all $x \in [0,2\pi]$, we have the following inequality for the function $f$
+    \begin{align*}
+        \indi_{[c,d]}(x) \leq f(x) \leq \indi_{\left[ c- \frac{\vep}{8}, d+\frac{\vep}{8} \right]}(x) 
+    \end{align*}
+    Rewriting the above inequality,
+    \begin{align*}
+        \left| f(x) - \indi_{[c,d]}(x) \right| \leq \indi_{\left[ c-\frac{\vep}{8}, c \right]}(x) + \indi_{\left[ d, d+\frac{\vep}{8} \right]}(x)
+    \end{align*}
+    This means there exists a large enough $N_1$, such that for all $n > N_1$
+    \begin{align*}
+        \frac{1}{n} \sum_{k=1}^{n} \left( \indi_{\left[ c-\frac{\vep}{8}, c \right]}(q_k) + \indi_{\left[ d, d+\frac{\vep}{8} \right]}(q_k) \right) \leq \frac{\vep}{3}
+    \end{align*}
+    For that same $N_1$,
+    \begin{align}
+        \left| \frac{1}{n}\sum_{k=1}^{n}\indi_{[c,d]}(q_k) - \frac{1}{n}\sum_{k=1}^{n}f(q_k) \right| \leq \frac{\vep}{3} \label{ineq:6}
+    \end{align}
+    Similarly,
+    \begin{align}
+        \frac{1}{2\pi} \left| \int_{0}^{2\pi} f(x) dx - \int_{0}^{2\pi}\indi_{[c,d]}(x)dx \right| \leq \frac{\vep}{3} \label{ineq:7}
+    \end{align}
+    Finally, because of our hypothesis, we have a large enough $N_2$ such that for all $n > N_2$,
+    \begin{align}
+        \left| \frac{1}{n}\sum_{k=1}^{n}f(q_k) - \frac{1}{2\pi}\int_{0}^{2\pi}f(x)dx \right| \leq \frac{\vep}{3} \label{ineq:8}
+    \end{align}
+    Let $N = \max(N_1, N_2)$, and adding up inequalities \ref{ineq:6}, \ref{ineq:7}, and \ref{ineq:8}, we get our result.
+    
+    This completes the proof of equivalence.
+\end{proof}
+
+This result shows how to equidistribution in terms of continuous functions. The next result will use Fejér's theorem to break up the result about continuous functions to exponential sums, giving us a much simpler formalism to work with.
+
+\begin{thm}
+    A subsequence $\{q_k\}$ of $[0,2\pi]$ is equidistributed iff for all non-zero integers $a$
+    \begin{align*}
+        \lim\limits_{n \to \infty} \frac{1}{n} \sum_{k=1}^{n} \exp(iaq_k) = 0
+    \end{align*}
+\end{thm}
+
+\begin{proof}
+    First we'll show that if the sequence is equidistributed, then the limit is $0$. Since $\exp(iax)$ is a continuous function for all $a$, from lemma \ref{lem:1}, we have
+    \begin{align*}
+        \lim\limits_{n \to \infty} \frac{1}{n} \sum_{k=1}^{n} \exp(iaq_k) &= \frac{1}{2\pi} \int_{0}^{2\pi} \exp(iax)dx \\
+        &= 0 &&\text{($a$ is non-zero)}
+    \end{align*}
+    
+    For the converse, we will use Fejér's theorem. Given a continuous $f$ and $\vep > 0$, use Fejér's theorem to find an exponential polynomial $p$ such that $\norm{p-f}_\infty < \frac{\vep}{3}$. In that case, we have
+    \begin{align}
+        \frac{1}{2\pi}\left| \int_{0}^{2\pi} f(x) dx - \int_{0}^{2\pi} p(x) dx \right| < \frac{\vep}{3}  \label{ineq:9}
+    \end{align}
+    and
+    \begin{align}
+        \left| \frac{1}{n} \sum_{k=1}^{n} f(q_k) - \frac{1}{n} \sum_{k=1}^{n} p(q_k) \right| < \frac{\vep}{3} \label{ineq:10}
+    \end{align}
+    And because of our hypothesis, we have a large enough $N$, such that for all $n > N$
+    \begin{align}
+        \left| \frac{1}{n} \sum_{k=1}^{n} p(q_k) -  \int_{0}^{2\pi} p(x) dx \right| \leq \frac{\vep}{3} \label{ineq:11}
+    \end{align}
+    Adding up inequalities \ref{ineq:9}, \ref{ineq:10}, and $\ref{ineq:11}$, we get our result. 
+\end{proof}
+
+\section{Weyl's equidistribution theorem: The weak version}
+The weak version of Weyl's equidistribution theorem states that the sequence
+\begin{align*}
+    q_k = kz \mod 2\pi
+\end{align*}
+is equidistributed in the interval $[0,2\pi]$ if $z$ is an irrational multiple of $\pi$. This can be shown really easily using the earlier formalisation, by looking at the exponential sums.
+\begin{align*}
+    \sum_{k=1}^{n} \exp(iakz) &= e^{iaz} \frac{1 - e^{ianz}}{1 - e^{iaz}}
+\end{align*}
+Since $z$ is an irrational multiple of $\pi$, the denominator is non-zero for all non-zero integers $a$. That means for a given $a$, the sum is bounded, hence
+\begin{align*}
+    \lim\limits_{n \to \infty} \frac{1}{n} \sum_{k=1}^{n} \exp(iakz) = 0
+\end{align*}
+and as a consequence, the sequence is equidistributed.
+
+\section{Weyl's equidistribution theorem: The stronger version}
+\textbf{Note:} Since it will get a little cumbersome to keep working with integral and irrational multiples of $2\pi$, we will instead deal with sequences in the interval $[0,1]$. The only change we'll need to keep in mind is that we'll be dealing the following sum
+\begin{align*}
+     \sum_{k=1}^{n} \exp(2\pi iaq_k)
+\end{align*}
+
+The stronger version of Weyl's equidistribution theorem states that the sequence
+\begin{align*}
+    q_k = \alpha k^2 + \beta k + \gamma \mod 1
+\end{align*}
+is equidistributed if $\alpha$ is irrational.
+ 
+This will involve showing that the sequence
+\begin{align}
+    S_n = \sum_{k=1}^{n} \exp(2\pi i aq_k) \label{target:1}
+\end{align}
+is $o(n)$ for all integers $n$, but since $\alpha$ is irrational, it suffices to show it for all irrational $\alpha$. In a nutshell, we have reduced the problem of equidistribution to a problem of bounding the given sum.
+ 
+\subsection{A preliminary bound for another sum}
+\textbf{Notation:} We will define the function $e(x)$ to be $e(2\pi i x)$.
+
+\begin{lem}
+    For all irrational $\theta$
+    \begin{align}
+    \displaystyle \left| \sum_{k=1}^{N} e(n\theta) \right| \leq \min\left(N, \frac{1}{\norm{\theta}} \right) \label{bound:1}
+    \end{align}
+    where $\norm{\theta}$ is distance of $\theta$ to its closest integer.
+\end{lem}
+
+\begin{proof}
+    By triangle inequality,
+    \begin{align*}
+        \left| \sum_{k=1}^{N} e(n\theta) \right| & \leq \sum_{k=1}^{N} \left| e(n\theta) \right| \\
+        &= N
+    \end{align*}
+    
+    And summing up the geometric series, we have
+    \begin{align*}
+        \left| \sum_{k=1}^{N} e(n\theta) \right| &\leq \frac{2}{\left| 1- e(\theta) \right|} \\
+        &= \frac{1}{\left| \sin(\pi \theta) \right|}\\
+        &\leq \frac{1}{\norm{\theta}} &\qedhere
+    \end{align*}
+\end{proof}
+ 
+\subsection{Weyl differencing} \label{sect:1}
+Since we want to show the sum $S_N$ (see equation \ref{target:1}) is in $o(N)$, it will suffice to show that $\left| S_N \right|^2$ is in $o(N^2)$.
+\begin{align*}
+    \left| \sum_{k=1}^{N} e(f(k)) \right|^2 &= \left( \sum_{k=1}^{N} e(f(k)) \right) \left( \sum_{k=1}^{N} e(-f(k)) \right) \\
+    &= \sum_{1 \leq j,l \leq N} e(f(j) - f(l)) \\
+    &= N + \sum_{d=1}^{N-1} \sum_{k=1}^{N-d} \left( e(f(k+d) - f(k)) + e(f(k) - f(k+d)) \right) \\
+    &= N + \sum_{d=1}^{N-1} \sum_{k=1}^{N-d} 2\Re \left( e(f(k+d) - f(k)) \right) \\
+    &= N + 2 \sum_{d=1}^{N-1} \Re \left( \sum_{k=1}^{N-d} e(f(k+d) - f(k)) \right) \\
+    &\leq N + 2 \sum_{d=1}^{N-1} \left| \sum_{k=1}^{N-d} e(f(k+d) - f(k)) \right|
+\end{align*}
+Plugging in the quadratic polynomial in $f$, we get
+\begin{align*}
+    \left| \sum_{k=1}^{N} e(q_k) \right|^2 &\leq N + 2\sum_{d=1}^{N-1} \left| \sum_{k=1}^{N-d} e((2\alpha d)k) \right| \\
+    &\leq N + 2 \sum_{d=1}^{N} \min \left( N, \frac{1}{\norm{2\alpha d}} \right)
+\end{align*}
+Since $N$ is in $o(N^2)$, all we need to show is that $\displaystyle \sum_{d=1}^{N} \min\left( N, \frac{1}{\norm{2\alpha d}} \right)$ is also in $o(N^2)$.
+
+\subsection{Rational approximation of irrational numbers}
+The main result of this section will show that given an irrational number $\alpha$, it's possible to find infinitely many rational numbers $\frac{p}{q}$ ($\gcd(p,q) = 1$) such that $|\alpha - \frac{p}{q}| < \frac{1}{q^2}$. We will need this result to bound the main sum.
+
+\begin{prop} \label{prop:1}
+    Given an irrational number $\alpha$ and $N \in \mathbb{N}$, there exists a rational number $\frac{p}{q}$ such that
+    \begin{align*}
+        \left| \alpha - \frac{p}{q} \right| < \frac{1}{q(N+1)}
+    \end{align*}
+    and $|q| \leq N$.
+\end{prop}
+
+\begin{proof}
+    Consider the following sequence modulo $1$:
+    \begin{align*}
+        \alpha, 2\alpha, 3\alpha, \ldots, N\alpha
+    \end{align*}
+    Divide $[0,1]$ into $N+1$ equally sized intervals. Clearly, one of the elements of that sequence must either lie in the subinterval $\left[ 0, \frac{1}{N+1} \right]$, or $\left[ \frac{N}{N+1}, 1 \right]$. Call that element $q\alpha$. In that case, the following inequality holds:
+    \begin{align*}
+        \norm{q\alpha} \leq \frac{1}{N+1}
+    \end{align*}
+    Let the integer closest to $q\alpha$ be $p$. In that case
+    \begin{align*}
+        \left| p - q\alpha \right| &\leq \frac{1}{N+1} \\
+        \left| \frac{p}{q} - \alpha \right| &\leq \frac{1}{q(N+1)}
+    \end{align*}
+    And since $q < N+1$
+    \begin{align*}
+        \left| \alpha - \frac{p}{q} \right| < \frac{1}{q^2} &\qedhere
+    \end{align*}
+\end{proof}
+
+\begin{cor}
+    If $\alpha$ is irrational, there are infinitely many rational numbers $\frac{p}{q}$ such that
+    \begin{align*}
+        \left| \alpha - \frac{p}{q} \right| < \frac{1}{q^2}
+    \end{align*}
+\end{cor}
+
+\begin{proof}
+    Suppose there were finitely many. Take the minimal distance $d$ of $\alpha$ with the rational approximations. Pick a large enough $N$ such that $\frac{1}{N+1} < d$. Use that $N$ in proposition \ref{prop:1} and get a contradiction.
+\end{proof}
+
+\subsection{Bounding the complete sum\cite{weyl}}
+At the end of section \ref{sect:1}, we saw that all we need to do is to show that the following sum
+\begin{align*}
+    W_N = \sum_{d=1}^{N} \min\left( N, \frac{1}{\norm{2\alpha d}} \right)
+\end{align*}
+is in $o(N^2)$.
+
+\begin{lem} \label{lem:2}
+    If $\alpha_1, \alpha_2, \ldots, \alpha_N$ are real numbers such that $\norm{\alpha_i - \alpha_j} \geq \frac{1}{r}$ for some natural number $r$ when $i \neq j$. Then
+    \begin{align*}
+        \sum_{i=1}^{N} \min\left( \frac{1}{\norm{\alpha_i}}, N \right) \leq 2N + 2r(\log(N) + 2)
+    \end{align*} 
+\end{lem}
+
+\begin{proof}
+    Without loss of generality, assume all the $\alpha_i$ lie within $\left[ -\frac{1}{2}, \frac{1}{2} \right]$. Furthermore, at least half the sum will either come from the positive or the negative $\alpha_i$. WLOG, assume it's the positive $\alpha_i$. Then we can just double the sum to get an upper bound. Assume that $\alpha_1 < \alpha_2 < \cdots < \alpha_n$, where $\alpha_1$ to $\alpha_n$ are the positive $\alpha_i$. In that case
+    \begin{align*}
+        \sum_{i=1}^{n}\min\left( \frac{1}{\norm{\alpha_i}}, N  \right) \leq N+ \left\lfloor \frac{r}{N} \right\rfloor N + \sum_{i > \left\lfloor \frac{r}{N} \right\rfloor} \frac{r}{i} &&\left(\text{Because $\norm{\alpha_i -\alpha_j} > \frac{1}{r}$}\right)
+    \end{align*}
+    The last term can have at most $n$ terms, hence it is bounded by $r (\log(n) + 1)$. But $n$ is smaller than or equal to $N$, since $n$ is the number of positive $\alpha_i$. Hence the last term is bounded by $r(\log(N) + 1)$. The second term is bounded by $r$, and the first term is $N$. Hence the complete bound is
+    \begin{align*}
+        \sum_{i=1}^{n}\min\left( \frac{1}{\norm{\alpha_i}}, N  \right) \leq N + r + r(\log(n) + 1)
+    \end{align*}
+    Since this is at least half the total sum, we get our bound.
+\end{proof}
+
+\begin{lem}
+    If $\frac{p}{q}$ is a rational approximation for $\alpha$ such that $\left| \alpha - \frac{p}{q} \right| < \frac{1}{q^2}$, then
+    \begin{align*}
+        \sum_{d=1}^{N} \min\left( \frac{1}{\norm{\alpha d}}, N \right) \leq \left( \frac{2N}{q}\right) \left( 2N +4q(\log(N) +2) \right)
+    \end{align*}
+\end{lem}
+
+\begin{proof}
+    We have the following inequality, which is not too hard to prove:
+    \begin{align*}
+        \norm{i\alpha - j\alpha} \geq \norm{(i-j)\frac{p}{q}} - \frac{|i-j|}{q^2} &&\left(\text{Taylor expand around $\frac{p}{q}$}\right)
+    \end{align*}
+    When $|i-j| \leq \frac{q}{2}$, then $\frac{(i-j)p}{q}$ is not an integer since $p$ and $q$ are co-prime. That means
+    \begin{align*}
+        \norm{(i-j)\frac{p}{q}} \geq \frac{1}{q}
+    \end{align*}
+    and 
+    \begin{align*}
+        \frac{|i-j|}{q^2} \leq \frac{1}{2q}
+    \end{align*}
+    which means
+    \begin{align*}
+        \norm{i\alpha - j\alpha} \geq \frac{1}{2q}
+    \end{align*}
+    Now we split up the range of summation, i.e. the interval $[1, N]$ into intervals of length $\frac{q}{2}$. To compute the sum over each of these intervals, we'll use lemma \ref{lem:2} with $r = 2q$. We'll have $\frac{2N}{q}$ such intervals, over each of which, the sum will be be bounded by $\left( 2N +4q(\log(N) +2) \right)$. The complete bound is hence
+    \begin{align*}
+        W_N \leq \left( \frac{2N}{q}\right) \left( 2N +4q(\log(N) +2) \right) &\qedhere
+    \end{align*}
+\end{proof}
+As $N$ goes to infinity, the $\frac{W_N}{N^2}$ becomes $\frac{2}{q}$. But since $\alpha$ is irrational, $q$ can be as large as possible. This shows that $W_N$ is in $o(N^2)$.
+
+\bibliography{references}
+\bibliographystyle{amsplain}
+
+
+\end{document}
