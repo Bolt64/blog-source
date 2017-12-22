@@ -54,3 +54,89 @@ exact by $\gamma$ amount. This is the first example of how cohomology measures h
 property fails to be global.
 
 ## Sheaf Cohomology
+Before we see what sort of local to global failure sheaf cohomology measures, we'll quickly define sheaves
+and sheaf cohomology, and look at one example.
+### Quick introduction to sheaves
+Given a manifold $M$ (whatever we discuss will hold in for Hausdorff spaces, and with a little 
+more work, can be made to work even for a larger class of spaces like spectra of rings), a sheaf $\mathcal{S}$
+of $K$-modules ($K$ is always assumed to be a commutative ring with identity)
+over $M$ is a topological space $\mathcal{S}$ with a surjective map $\pi: \mathcal{S} \to M$, such that
+the following properties are satisfied.
+
+1. $\pi$ is a local homeomorphism, i.e. for any point $s \in \mathcal{S}$, there's a neighbourhood
+of $s$ such that $\pi$ restricted to that neighbourhood is a homoemorphism.
+2. $\pi^{-1}(x)$, which we'll denote by $\mathcal{O}_x$, is a $K$-module, for all $x \in M$. $\mathcal{O}_x$
+is called the stalk of $\mathcal{S}$ at $x$.
+3. The module operations on the stalk are continuous, i.e. if we look at the stalk with the subspace
+topology, the module operations of addition and scalar multiplication are continuous.
+
+Sheaves in some sense a modules parametrized by the space $M$, like vector bundles, but vector
+bundles do not satisfy the first condition, unlike sheaves.
+The simplest example of a sheaf is the *constant sheaf* which is just $M \times V$, where $V$ is a
+$K$-module with the discrete topology.
+
+Another important example is the sheaf of germs of $C^{\infty}$ functions on a manifold
+$M$. For each $x \in M$, a point in $\mathcal{O}_x$ is an equivalence class of functions, the equivalence
+relation being that $f \sim g$ if $f$ and $g$ agree on some neighbourhood of $x$. This sheaf deserves a post
+of its own, and I shall write about it in the future.
+
+The last example, which will be key to our goal, is the *skyscraper sheaf*. We'll describe it by first
+describing the stalk at each point, and then putting an appropriate topology on it. Fix a point $x_0 \in M$.
+The stalk $\mathcal{O}_{x_0}$ at $x_0$ will be $K$ as a module over itself. The stalk at every other point
+is the zero module. As a set, our sheaf is the following.
+$$\mathcal{S} = K \sqcup \bigsqcup_{x \neq x_0} \{0\}$$
+The question is what topology do we put on this space. The 
+[line with two origins](https://en.wikipedia.org/wiki/Non-Hausdorff_manifold#Line_with_two_origins)
+provides a hint. What we do is take $|K|$ copies of the space $M$, and if $x \neq x_0$, we identify
+all of those $x$'s, otherwise we do nothing. It's not too hard to check that this defines
+a sheaf over $M$ (the local homeomorphism property is the hardest to check, and relies on the fact
+that points are closed in Hausdorff spaces). In fact, if $M = \mathbb{R}$ and $K = \mathbb{Z}/2$, then
+then skyscraper sheaf at $0$ *is* the line with two origins. The reason this is called the skyscraper
+sheaf is because only the stalk at $x_0$ is tall, the stalks everywhere are flat, which makes it look
+like a tall structure in an otherwise flat featureless landscape.
+
+We're really interested in is a variant of a skyscraper sheaf with two skyscrapers, i.e. the stalks
+at points $x_0$ and $x_1$ are $K$, and otherwise $0$. The topology on this sheaf can be defined
+analogously. We'll come back to this example once we've defined sheaf cohomology.
+
+### Definition of sheaf cohomology
+Just like in the case of a vector bundles over a manifold $M$, where the *right* kind of map
+between vector bundles is a smooth map that is a linear map on each fibre, the *right* kind
+of map between two sheaves $\mathcal{S}_1$ and $\mathcal{S}_2$ on a space $M$ is a continuous map $f$
+such that it satisfies the following properties.
+
+1. $\pi = \pi \circ f$
+2. $f$ restricted to any any stalk $\mathcal{O}_x$ is a $K$-module homomorphism.
+
+Fixing a space $M$, we get the category of sheaves of $K$-modules over $M$, whose objects are sheaves,
+and the morphisms are what we just defined, called sheaf homomorphisms. This category turns out to be
+especially nice, sharing many characteristics with the category of abelian groups and more generally, the
+category of $K$-modules, such as maps possesing kernels and cokernels, and possessing a version
+of the [First Isomorphism Theorem](https://en.wikipedia.org/wiki/Isomorphism_theorems#First_isomorphism_theorem).
+This sort of category is called an abelian category, and this category is the appropriate category
+to do homological algebra in. Coming back to sheaves, the kernel of a sheaf homomorphism $f: \mathcal{S}_1 \to \mathcal{S}_2$
+is the set of all points which map to the zero element in the stalk. With a little bit of work, we can show the
+image of $f$ is a sheaf in its own right, and subsheaf of $\mathcal{S}_2$, just like the kernel of $f$
+is a subsheaf of $\mathcal{S}_1$ (the definition of a subsheaf is the most obvious one).
+
+With all these definitions in hand, we can talk about exact sequences of sheaves. Consider a sequence of sheaves
+and sheaves homorphisms of the following kind.
+$$\cdots \xrightarrow{d_{i-2}} \mathcal{S}_{i-1} \xrightarrow{d_{i-1}} \mathcal{S}_{i} \xrightarrow{d_{i}} \mathcal{S}_{i+1} \xrightarrow{d_{i+1}} \cdots$$
+This sequence is exact if $\mathrm{ker}(d_{i}) = \mathrm{im}(d_{i-1})$.
+
+The next thing we look at is the functor $\Gamma$ from the category of sheaves of $K$-modules over
+$M$ to the category of $K$-modules. For each sheaf $\mathcal{S}$, the object $\Gamma(\mathcal{S})$
+is the module of sections of $\mathcal{S}$. A section of a sheaf $\mathcal{S}$ is a map $s: M \to \mathcal{S}$
+such that $\pi \circ s = \mathrm{id}$. Clearly, we can add two sections, and we can also multiply them by
+a scalar; we therefore have a $K$-module. The functor $\Gamma$ acts on morphisms by composing them with
+the section map, i.e. $\Gamma(f) = f \circ s$. The important question to ask here is whether the functor
+$\Gamma$ is exact, i.e. does it short exact sequences to short exact sequences. The answer is no. Consider
+the following short exact sequence.
+$$0 \rightarrow \mathcal{S_1} \xrightarrow{\alpha} \mathcal{S_2}\xrightarrow{\beta} \mathcal{S_3} \rightarrow 0$$
+The best we can say is the following sequence is exact.
+$$0 \rightarrow \Gamma(\mathcal{S_1}) \xrightarrow{\Gamma(\alpha)} \Gamma(\mathcal{S_2}) \xrightarrow{\Gamma(\beta)} \Gamma(\mathcal{S_3})$$
+We'll show why we have exactness at $\Gamma(\mathcal{S_1})$ and $\Gamma(\mathcal{S_2})$.
+
+Suppose some $s \in \Gamma(\mathcal{S_1})$ maps to $0$ in $\Gamma(\mathcal{S_2})$. That tells us
+that $\Gamma(\alpha)(s) = 0$. But that by definition means that $\alpha \circ s = 0$. But $\alpha$ is injective,
+which means $s = 0$. This shows exactness at $\Gamma(\mathcal{S_1})$. 
