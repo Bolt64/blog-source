@@ -27,7 +27,7 @@ In the case of De Rham cohomology,
 we'll interpret the form being closed as a local property, and it being exact a global property,
 and the the case of sheaf cohomology, the exactness of the following sequence (the 
 exact details of which we'll see in a later section) as a local property.
-$$0 \rightarrow \mathcal{S_1} \rightarrow \mathcal{S_2}\rightarrow \mathcal{S_3} \rightarrow 0$$
+$$0 \rightarrow \mathcal{S}_1 \rightarrow \mathcal{S}_2\rightarrow \mathcal{S}_3 \rightarrow 0$$
 The exactness of the sequence we get by applying $\Gamma$ to the above sequence turns
 out to be a global property.
 
@@ -99,7 +99,7 @@ We're really interested in is a variant of a skyscraper sheaf with two skyscrape
 at points $x_0$ and $x_1$ are $K$, and otherwise $0$. The topology on this sheaf can be defined
 analogously. We'll come back to this example once we've defined sheaf cohomology.
 
-### Definition of sheaf cohomology
+### The category of sheaves of $K$-modules over a space
 Just like in the case of a vector bundles over a manifold $M$, where the *right* kind of map
 between vector bundles is a smooth map that is a linear map on each fibre, the *right* kind
 of map between two sheaves $\mathcal{S}_1$ and $\mathcal{S}_2$ on a space $M$ is a continuous map $f$
@@ -109,7 +109,9 @@ such that it satisfies the following properties.
 2. $f$ restricted to any any stalk $\mathcal{O}_x$ is a $K$-module homomorphism.
 
 Fixing a space $M$, we get the category of sheaves of $K$-modules over $M$, whose objects are sheaves,
-and the morphisms are what we just defined, called sheaf homomorphisms. This category turns out to be
+and the morphisms are what we just defined, called sheaf homomorphisms. It follows from the fact that
+$\pi$ is a local homeomorphism that even sheaf homomorphisms are local homeomorphisms.
+This category turns out to be
 especially nice, sharing many characteristics with the category of abelian groups and more generally, the
 category of $K$-modules, such as maps possesing kernels and cokernels, and possessing a version
 of the [First Isomorphism Theorem](https://en.wikipedia.org/wiki/Isomorphism_theorems#First_isomorphism_theorem).
@@ -132,11 +134,32 @@ a scalar; we therefore have a $K$-module. The functor $\Gamma$ acts on morphisms
 the section map, i.e. $\Gamma(f) = f \circ s$. The important question to ask here is whether the functor
 $\Gamma$ is exact, i.e. does it short exact sequences to short exact sequences. The answer is no. Consider
 the following short exact sequence.
-$$0 \rightarrow \mathcal{S_1} \xrightarrow{\alpha} \mathcal{S_2}\xrightarrow{\beta} \mathcal{S_3} \rightarrow 0$$
+$$0 \rightarrow \mathcal{S}_1 \xrightarrow{\alpha} \mathcal{S}_2\xrightarrow{\beta} \mathcal{S}_3 \rightarrow 0 \tag{1}$$
 The best we can say is the following sequence is exact.
-$$0 \rightarrow \Gamma(\mathcal{S_1}) \xrightarrow{\Gamma(\alpha)} \Gamma(\mathcal{S_2}) \xrightarrow{\Gamma(\beta)} \Gamma(\mathcal{S_3})$$
-We'll show why we have exactness at $\Gamma(\mathcal{S_1})$ and $\Gamma(\mathcal{S_2})$.
+$$0 \rightarrow \Gamma(\mathcal{S}_1) \xrightarrow{\Gamma(\alpha)} \Gamma(\mathcal{S}_2) \xrightarrow{\Gamma(\beta)} \Gamma(\mathcal{S}_3) \tag{2}$$
+We'll show why we have exactness at $\Gamma(\mathcal{S}_1)$ and $\Gamma(\mathcal{S}_2)$.
 
-Suppose some $s \in \Gamma(\mathcal{S_1})$ maps to $0$ in $\Gamma(\mathcal{S_2})$. That tells us
+Suppose some $s \in \Gamma(\mathcal{S}_1)$ maps to $0$ in $\Gamma(\mathcal{S}_2)$. That tells us
 that $\Gamma(\alpha)(s) = 0$. But that by definition means that $\alpha \circ s = 0$. But $\alpha$ is injective,
-which means $s = 0$. This shows exactness at $\Gamma(\mathcal{S_1})$. 
+which means $s = 0$. This shows exactness at $\Gamma(\mathcal{S}_1)$.
+
+Showing exactness at $\Gamma(\mathcal{S}_2)$ is a little more involved. Consider an element $s \in \Gamma(\mathcal{S}_2)$
+which gets mapped to the zero section in $\Gamma(\mathcal{S}_3)$. That means for all $m \in M$, $\beta(s(m)) = 0$.
+By exactness at $\mathcal{S}_2$, we can find for each $m$, an element $s'(m)$ of $\mathcal{S}_1$ such that $\alpha(s'(m)) = s(m)$.
+Furthermore, because the original short exact sequence is exact at $\mathcal{S}_1$, the element $s'(m)$ is uniquely
+defined (this is where the argument fails to work for $\Gamma(\mathcal{S}_3)$). All we need to show now is that the
+map $m \mapsto s'(m)$ is a continuous map. This is where we use the fact that sheaf homomorphisms are local
+homeomorphisms. For any $m$, pick a small enough neighbourhood $U$ around $s'(m)$ such that $\alpha$ is a local
+homeomorphism on $U$. Then $s'^{-1}(U)$ is given by $s^{-1}(\alpha(U))$, which is open since $s$ is a continuous section.
+
+Notice that the exactness of sequence $(1)$ is a purely local property; it suffices to check whether the sequence on
+each stalk is exact. On the other hand, showing exactness at $\Gamma(\mathcal{S}_3)$ would be a global property. This
+is because given any section $s \in \Gamma(\mathcal{S}_3)$, the best we can do is construct sections $s_U$ on open
+subsets $U$ of $M$. It might so happen that these sections defined on different subsets of $M$ cannot be patched together
+consistently to get a continuous section. The cohomology of the sheaf will measure how badly the functor $\Gamma$ fails
+to be exact. This again is an example of trying to extend a local property globally, and the cohomology measures
+how badly that fails to happen. We must first however defined what we mean by cohomology of the sheaf before we can make sense of
+the proposed analogy.
+
+### Definition of sheaf cohomology
+
