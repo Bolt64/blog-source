@@ -24,7 +24,7 @@ as a DAAD-WISE Fellow.
 [ITCSC-INC Winter School](http://www.itcsc.cuhk.edu.hk/Winter_School/Winter_School_2017/index.html).
 - **July 2016:** I was at National Centre for Biological Sciences, attending
 the [Physics of Life](https://theory.ncbs.res.in/physlife2016) Monsoon School.
-- **2014-Present**: Mathematics major at Indian Institute of Science.
+- **2014 - Present**: Mathematics major at Indian Institute of Science.
 
 ### Quick links
 
