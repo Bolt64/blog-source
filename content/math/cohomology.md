@@ -2,7 +2,7 @@ title: Cohomology as a measure of local to global failure
 slug: cohomology-local-global
 tags: cohomology, sheaves
 category: mathematics
-date: 20-12-2017
+date: 25-12-2017
 
 ## Motivation for cohomology
 In most introductory algebraic topology courses, cohomology is rather poorly
@@ -64,7 +64,7 @@ over $M$ is a topological space $\mathcal{S}$ with a surjective map $\pi: \mathc
 the following properties are satisfied.
 
 1. $\pi$ is a local homeomorphism, i.e. for any point $s \in \mathcal{S}$, there's a neighbourhood
-of $s$ such that $\pi$ restricted to that neighbourhood is a homoemorphism.
+of $s$ such that $\pi$ restricted to that neighbourhood is a homeomorphism.
 2. $\pi^{-1}(x)$, which we'll denote by $\mathcal{O}_x$, is a $K$-module, for all $x \in M$. $\mathcal{O}_x$
 is called the stalk of $\mathcal{S}$ at $x$.
 3. The module operations on the stalk are continuous, i.e. if we look at the stalk with the subspace
@@ -113,7 +113,7 @@ and the morphisms are what we just defined, called sheaf homomorphisms. It follo
 $\pi$ is a local homeomorphism that even sheaf homomorphisms are local homeomorphisms.
 This category turns out to be
 especially nice, sharing many characteristics with the category of abelian groups and more generally, the
-category of $K$-modules, such as maps possesing kernels and cokernels, and possessing a version
+category of $K$-modules, such as maps possessing kernels and cokernels, and possessing a version
 of the [First Isomorphism Theorem](https://en.wikipedia.org/wiki/Isomorphism_theorems#First_isomorphism_theorem).
 This sort of category is called an abelian category, and this category is the appropriate category
 to do homological algebra in. Coming back to sheaves, the kernel of a sheaf homomorphism $f: \mathcal{S}_1 \to \mathcal{S}_2$
@@ -122,7 +122,7 @@ image of $f$ is a sheaf in its own right, and subsheaf of $\mathcal{S}_2$, just 
 is a subsheaf of $\mathcal{S}_1$ (the definition of a subsheaf is the most obvious one).
 
 With all these definitions in hand, we can talk about exact sequences of sheaves. Consider a sequence of sheaves
-and sheaves homorphisms of the following kind.
+and sheaf homomorphisms of the following kind.
 $$\cdots \xrightarrow{d_{i-2}} \mathcal{S}_{i-1} \xrightarrow{d_{i-1}} \mathcal{S}_{i} \xrightarrow{d_{i}} \mathcal{S}_{i+1} \xrightarrow{d_{i+1}} \cdots$$
 This sequence is exact if $\mathrm{ker}(d_{i}) = \mathrm{im}(d_{i-1})$.
 
@@ -135,9 +135,11 @@ the section map, i.e. $\Gamma(f) = f \circ s$. The important question to ask her
 $\Gamma$ is exact, i.e. does it short exact sequences to short exact sequences. The answer is no. Consider
 the following short exact sequence.
 $$0 \rightarrow \mathcal{S}_1 \xrightarrow{\alpha} \mathcal{S}_2\xrightarrow{\beta} \mathcal{S}_3 \rightarrow 0 \tag{1}$$
-The best we can say is the following sequence is exact.
-$$0 \rightarrow \Gamma(\mathcal{S}_1) \xrightarrow{\Gamma(\alpha)} \Gamma(\mathcal{S}_2) \xrightarrow{\Gamma(\beta)} \Gamma(\mathcal{S}_3) \tag{2}$$
-We'll show why we have exactness at $\Gamma(\mathcal{S}_1)$ and $\Gamma(\mathcal{S}_2)$.
+If we apply the functor $\Gamma$ to the sequence, we get something that is not completely exact.
+$$0 \rightarrow \Gamma(\mathcal{S}_1) \xrightarrow{\Gamma(\alpha)} \Gamma(\mathcal{S}_2) \xrightarrow{\Gamma(\beta)} \Gamma(\mathcal{S}_3) \rightarrow 0
+\tag{2}$$
+This sequence is exact only
+exact at $\Gamma(\mathcal{S}_1)$ and $\Gamma(\mathcal{S}_2)$.
 
 Suppose some $s \in \Gamma(\mathcal{S}_1)$ maps to $0$ in $\Gamma(\mathcal{S}_2)$. That tells us
 that $\Gamma(\alpha)(s) = 0$. But that by definition means that $\alpha \circ s = 0$. But $\alpha$ is injective,
@@ -157,9 +159,23 @@ each stalk is exact. On the other hand, showing exactness at $\Gamma(\mathcal{S}
 is because given any section $s \in \Gamma(\mathcal{S}_3)$, the best we can do is construct sections $s_U$ on open
 subsets $U$ of $M$. It might so happen that these sections defined on different subsets of $M$ cannot be patched together
 consistently to get a continuous section. The cohomology of the sheaf will measure how badly the functor $\Gamma$ fails
-to be exact. This again is an example of trying to extend a local property globally, and the cohomology measures
-how badly that fails to happen. We must first however defined what we mean by cohomology of the sheaf before we can make sense of
-the proposed analogy.
+to be exact; to be more precise, the cohomology will tell us how extend sequence $(2)$ to get an exact sequence. We'll
+leave the precise details of this for a later post, and satisfy ourselves with an example of when exactness fails
+to happen at $\Gamma(\mathcal{S}_3)$.
 
-### Definition of sheaf cohomology
+To show this, we will exhibit a surjective sheaf homomorphism $f$ such that $\Gamma(f)$ is not
+a surjective module map. Consider a connected space $M$, and let $\mathcal{S}_1$ be the constant
+sheaf on $M$. Recall that this means $\mathcal{S}_1$ is $M \times K$, with the discrete topology
+on $K$. Let $\mathcal{S}_2$ be the skyscraper sheaf on $M$ with two skyscrapers,
+which means the stalk is $K$ at points $x_0$ and $x_1$ and zero otherwise.
+On the stalk at point which is not $x_0$ or $x_1$, the homomorphism is obviously the 
+zero homomorphism. On the stalk at $x_0$ and $x_1$, we let the homomorphism be the identity
+homomorphism. It's clear that this sheaf homomorphism, call it $f$ is surjective. But observe that
+$\Gamma(\mathcal{S}_1) = K$. That's because we picked $M$ to be a connected manifold, which means
+the section must the constant section. On the other hand, $\Gamma(\mathcal{S}_2) = K \oplus K$,
+since the section can take any value independently at $x_0$ and $x_1$. Which means $\Gamma(f)$ is
+a map from $K$ to $K \oplus K$, which cannot be surjective in general.
 
+This tells us that exactness at $\Gamma(\mathcal{S}_3)$ is a global property, and the cohomology
+measures (in a loose sense) how the local property of exactness of $(1)$ fails to translate to exactness
+of $(2)$.
