@@ -1,8 +1,9 @@
 title: Cohomology as a measure of local to global failure
 slug: cohomology-local-global
-tags: cohomology, sheaves
+tags: cohomology, sheaves, topology
 category: mathematics
 date: 25-12-2017
+updated: 30-12-2017
 
 ## Motivation for cohomology
 In most introductory algebraic topology courses, cohomology is rather poorly motivated. It's most
@@ -175,3 +176,10 @@ general.
 This tells us that exactness at $\Gamma(\mathcal{S}_3)$ is a global property, and the cohomology
 measures (in a loose sense) how the local property of exactness of $(1)$ fails to translate to
 exactness of $(2)$.
+
+ADDENDUM: I will add links to similar expositions whenever I find them.
+
+1. Čech cohomology and the Mittag-Leffler problem: The Čech cohomology determines
+whether meromorphic functions defined on small open sets can be patched together to
+get a globally defined meromorphic function satisfying certain properties. 
+([Link](https://toperkin.mysite.syr.edu/talks/sheaves_and_more_cohomology.pdf) to article)
