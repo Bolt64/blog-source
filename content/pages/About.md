@@ -4,7 +4,7 @@ Priority: 0
 
 <!--![Image](/images/photo.jpg)-->
 
- I am Sayantan Khan, an undergraduate at the Indian Institute of Sciece,
+ I am Sayantan Khan, an undergraduate at the Indian Institute of Science,
  majoring in Mathematics. This website contains some things I occasionally
  write about, along with details of some of my
  past work, both in pure mathematics, as well as other areas.
