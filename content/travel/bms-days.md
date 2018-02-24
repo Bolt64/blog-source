@@ -50,7 +50,20 @@ of the orbits, and shows that they are different, then one would have shown that
 the permanent is hard[^4].
 
 The speaker then stated one of his results, which characterized the boundary of one such orbit
-closure. 
+closure. Although currently these sort of algebraic geometry results are from solving any related
+problem in complexity theory, the hope is that in a few years (a couple of decades or so), there will
+have been sufficient progress.
+
+### (Some aspects of) Convexity and curvature (Stephen Lynch, FU Berlin)
+Given a smooth embedding of $S^n$ into $\mathbb{R}^{n+1}$, where $\mathbb{R}^{n+1}$ has the
+Euclidean metric, it turns out that convexity of the domain bounded by $S^n$ can be expressed
+in an infinitesimal manner as the second fundamental form being positive definite everywhere
+on $S^n$, which is equivalent the induced metric on $S^n$ having non-negative sectional curvature
+everywhere. The speaker generalized this condition for embeddings of $S^n$ in $\mathbb{R}^{n+k}$
+for $k \geq 1$ in an appropriate manner (it's not so simple because for $k \geq 2$, $S^n$ does not
+bound a domain, and the second fundamental form now really is a collection of $k$ bilinear forms,
+so talking about positive definiteness is not easy).
+
 
 
 [^1]: The complete list of BMS Student Conference talks is
