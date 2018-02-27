@@ -106,3 +106,7 @@ output/
 # swp files
 *.swp
 .*.swp
+
+# pelican files
+pelican.pid
+srv.pid
