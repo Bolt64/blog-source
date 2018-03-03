@@ -8,10 +8,13 @@ I spent the last week (18th to 24th February) at Berlin, courtesy Berlin Mathema
 who invited me over for the BMS Days (where I had an interview for a PhD position), as well
 as the BMS Student Conference which immediately followed the BMS Days. I heard a lot of talks
 on very interesting stuff, some of which I want to outline here, just to have an account of it,
-if nothing else; this will also serve as a reminder of the stuff I did while I was here, people
-I met, and the food I ate.
+if nothing else; this will also serve as a reminder of the areas and results I might want to follow
+up on some time in the future.
 
 ## The math talks (in no particular order)[^1]
+
+I'll only write about some of the talk; although all of them were fairly interesting,
+some were more interesting than others. 
 
 ### The computational complexity of query answering under updates (Nicole Schweikardt, HU Berlin)
 This talk outlined the idea of analyzing database systems from the point of view
@@ -27,7 +30,7 @@ framework: the results in the presentation however looked at the subclass of que
 (the *Conjunctive Queries*) which
 only used AND of atomic propositions, and only used the existential qualifiers[^2].
 
-For a fixed query, the talk described a good algorithm and a data structure for the
+For a fixed query, Nicole described a good algorithm and a data structure for the
 database such that existence and enumeration of the entries satisfying the queries could
 be done reasonably fast, as well as updating the database. 
 
@@ -49,22 +52,20 @@ the determinant would be to show that the two orbits are different. If one looks
 of the orbits, and shows that they are different, then one would have shown that even approximating
 the permanent is hard[^4].
 
-The speaker then stated one of his results, which characterized the boundary of one such orbit
-closure. Although currently these sort of algebraic geometry results are from solving any related
-problem in complexity theory, the hope is that in a few years (a couple of decades or so), there will
-have been sufficient progress.
+Jesko then stated one of his results, which characterized the boundary of one such orbit
+closure. He also mentioned that this approach to complexity theory might take a while to
+bear significant results, as the foundations of this area are being built up.
 
 ### (Some aspects of) Convexity and curvature (Stephen Lynch, FU Berlin)
-Given a smooth embedding of $S^n$ into $\mathbb{R}^{n+1}$, where $\mathbb{R}^{n+1}$ has the
-Euclidean metric, it turns out that convexity of the domain bounded by $S^n$ can be expressed
-in an infinitesimal manner as the second fundamental form being positive definite everywhere
-on $S^n$, which is equivalent the induced metric on $S^n$ having non-negative sectional curvature
-everywhere. The speaker generalized this condition for embeddings of $S^n$ in $\mathbb{R}^{n+k}$
-for $k \geq 1$ in an appropriate manner (it's not so simple because for $k \geq 2$, $S^n$ does not
-bound a domain, and the second fundamental form now really is a collection of $k$ bilinear forms,
-so talking about positive definiteness is not easy).
-
-
+This talk was a presentation of Stephen's recent work (which is also on the 
+[arXiv](https://arxiv.org/abs/1709.09697)). This work generalized convex embeddings
+of $S^n$ into $\mathbb{R}^{n+1}$ to higher co-dimension embeddings, where the notion
+of convexity does not make sense. This was done by replacing the condition of convexity
+by an inequality on the second fundamental form, which is exactly equivalent to convexity
+in the case of co-dimension $1$. This sort of inequality, called the pinching condition,
+leads to the solution of the mean curvature flow existing for all time, the solution
+exhibited further rigidity in the sense that the evolution of time of the sphere is just
+homothety.
 
 [^1]: The complete list of BMS Student Conference talks is
 	[here](https://bmsstudconf.github.io/2018/talks.html) and the ones given

@@ -15,6 +15,9 @@ You can have a look at my past projects and presentation by clicking on the
 ### Timeline
 Here's a short description of some of the places I've been at since 2014.
 
+- **February 2018:** I was at Freie Universität Berlin and at Urania attending
+the [BMS Student Conference](https://bmsstudconf.github.io/2018/index.html) and the
+BMS Days respectively.
 - **November 2017:** I was at International Centre for Theoretical Sciences,
 attending the [Geometry, Groups and
 Dynamics](https://www.icts.res.in/program/ggd2017) program.
