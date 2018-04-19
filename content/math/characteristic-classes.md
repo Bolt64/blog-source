@@ -1,7 +1,13 @@
-title: Characteristic classes and Chern-Weil theory
-slug: chern-weil
-tags: differential-geometry, algebraic-topology, vector-bundles
+title: Chern classes are independent of connection
+slug: chern-independent-connection
+tags: differential-geometry, vector-bundles
 category: mathematics
-date: 06-04-2018
+date: 20-04-2018
 
-# Characteristic classes
+## Characteristic classes
+
+Given a manifold $M$, one way to study  vector bundles 
+over $M$ is to use the theory of 
+characteristic classes. 
+A characteristic class assigns to each vector bundle
+over $M$ an element of the cohomology ring $H^{\ast}(M, G)$
