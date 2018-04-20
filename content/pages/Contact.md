@@ -5,7 +5,7 @@ Priority: 4
 You can contact me via email at either of the following addresses.
 
 - sayantangkhan@gmail.com
-- sayantankhan@iisc.ac.in
+- saykhan@umich.edu
 
 You can also have a look at my [GitHub profile](https://github.com/Bolt64).
 

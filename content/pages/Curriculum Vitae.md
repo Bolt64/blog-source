@@ -21,13 +21,10 @@ Homotopy Theory (Summer semester at University of Münster)
 ##Mathematical Experience {#mathematical-experience .unnumbered}
 ###Bachelor’s Thesis Project {#sec:bach-thes-proj .unnumbered}
 
--   **Hodge theory of Riemannian manifolds:**
-    The initial part of this project involved the study of the basics of
-    differential and Riemannian geometry. I studied the books
-    *Introduction to Smooth Manifolds* by John M. Lee, and *Foundations
-    of Differentiable Manifolds and Lie Groups* by Frank Warner. This
-    project is currently underway at Indian Institute of Science, under
-    the mentorship of Dr. Harish Seshadri.
+-   **Laplacian on Riemannian manifolds:**
+	In this project, I studied elliptic partial differential operators on Riemannian manifolds, in particular
+    the Laplace-Beltrami operator. I looked at the Hodge decomposition theorem, and some applications of that.
+    I then looked at the spectrum of the Laplacian, and saw how it affected the geometry of the manifold.
 
 ###Summer Projects {#summer-projects .unnumbered}
 

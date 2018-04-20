@@ -2,6 +2,13 @@ Title: Past projects
 Date: 14/12/2017
 Priority: 1
 
+### Laplacian on Riemannian manifolds (Spring semester 2018)
+In the spring semester of 2018, I studied the Laplacian, and more generally
+elliptic partial differential operators acting on Riemannian manifolds. I looked
+at the Hodge theorem, and also studied how the eigenvalues of the Laplacian
+affect the geometry of the manifold, and vice versa. [Here](pdfs/thesis_summary/thesis-summary.pdf)
+is a summary of some of things I studied over the semester.
+
 ### Homotopy Theory and $L^2$-invariants (Summer 2017)
  In the summer of 2017, I was a summer student at the University of Münster, and I
  took courses in Homotopy Theory and Homological Algebra. I also participated in a
