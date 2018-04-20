@@ -57,6 +57,9 @@ Homotopy Theory (Summer semester at University of Münster)
 
 ###Expository Articles {#expository-articles .unnumbered}
 
+-   <span>The Laplacian on Riemannian manifolds</span>
+    ([link](https://sayantangkhan.github.io/pages/pdfs/thesis_summary/thesis-summary.pdf))
+
 -   <span>Technical results in Homotopy Theory</span>
     ([link](https://sayantangkhan.github.io/expository_articles/web/technical_results.pdf))
 
