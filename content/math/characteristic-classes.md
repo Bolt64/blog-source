@@ -21,12 +21,12 @@ characteristic classes are an invariant of vector bundles over a manifold. If tw
 bundles are isomorphic, they'll get assigned the same characteristic class.
 
 The first step in studying characteristic classes is to construct interesting examples of them.
-Its definition is certainly of not much help in actually constructing any examples. In fact,
+Its definition is certainly not of much help in actually constructing any examples. In fact,
 constructing characteristic classes is not entirely trivial, and requires some work. We'll look
 at one way of constructing characteristic classes, called Chern classes. This construction
 is quite non-trivial, and requires the use of differential geometric machinery. The advantage of this
 construction however, is that it gives an explicit way of constructing characteristic classes over
-a lot of familiar manifolds.
+a lot of familiar vector bundles.
 
 ## Connections on vector bundles
 
