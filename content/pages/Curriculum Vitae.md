@@ -9,15 +9,6 @@ Priority: 3
 ***Bachelor of Science (Research)***: 4<sup>th</sup> Year Mathematics major
 at Indian Institute of Science, Bangalore.
 
-**Relevant courses taken:** Analysis sequence (Real analysis,
-Complex analysis, Measure Theory, Measure Theoretic Probability
-Theory, Topics in analysis, Multivariate analysis, Ordinary
-Differential Equations), Topology sequence (Topology, Algebraic
-Topology I and II), Differentiable Manifolds and Lie Groups, Algebra
-sequence (Linear algebra, Algebra I and II), Homotopy Type Theory,
-Homological algebra (Summer semester at University of Münster), and
-Homotopy Theory (Summer semester at University of Münster)
-
 ##Mathematical Experience {#mathematical-experience .unnumbered}
 ###Bachelor’s Thesis Project {#sec:bach-thes-proj .unnumbered}
 
