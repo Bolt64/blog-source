@@ -6,7 +6,7 @@ Priority: 3
 
 ##Education {#education .unnumbered}
 
-***Bachelor of Science (Research)***: 4<sup>th</sup> Year Mathematics major
+***Bachelor of Science (Research)***:  Mathematics major
 at Indian Institute of Science, Bangalore.
 
 ##Mathematical Experience {#mathematical-experience .unnumbered}
@@ -98,6 +98,12 @@ at Indian Institute of Science, Bangalore.
 
 ##Summer and Winter Schools {#summer-and-winter-schools .unnumbered}
 
+-   **AIS on Basic Algebraic Geometry (2018):** A three week long instructional school on algebraic
+          geometry held at IISER Pune. Its audience consisted of advanced undergraduate and
+          beginning graduate students. It focused on the basics of classical algebraic geometry,
+          i.e. affine and projective varieties, and in the latter half, focused on non-singular
+          varieties and algebraic curves.
+
 -   **Geometry, Groups and Dynamics (2017):** A three week advanced
     program focusing on geometry, group actions, and dynamical systems.
     Its audience consisted of graduate students and young researchers.
@@ -119,7 +125,7 @@ at Indian Institute of Science, Bangalore.
 
 ##Computer skills {#computer-skills .unnumbered}
 
--   **Programming languages**: Python, C, Haskell, Scala, TeX
+-   **Programming languages**: Python, Rust, Haskell, Scala, TeX
 
 -   **Mathematical tools**: Maple, Lean Theorem Prover
 

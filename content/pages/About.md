@@ -4,9 +4,9 @@ Priority: 0
 
 <!--![Image](/images/photo.jpg)-->
 
- I am Sayantan Khan, an undergraduate at the Indian Institute of Science 
- (and soon to be graduate student at University of Michigan),
- majoring in Mathematics. This website contains some things I occasionally
+ I am Sayantan Khan, a graduate student in Mathematics at the University of Michigan
+ (and previously an undergraduate at Indian Institute of Science).
+ This website contains some things I occasionally
  write about, along with details of some of my
  past work, both in pure mathematics, as well as other areas.
 
@@ -18,6 +18,7 @@ Here's a short description of some of the places I've been at since 2014.
 
 - **August 2018 onwards:** Graduate student at the Mathematics department at University
 of Michigan, Ann Arbor.
+- **July 2018:** I was at IISER Pune attending the AIS on algebraic geometry.
 - **February 2018:** I was at Freie Universität Berlin and at Urania attending
 the [BMS Student Conference](https://bmsstudconf.github.io/2018/index.html) and the
 BMS Days respectively.
