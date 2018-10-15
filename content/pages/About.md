@@ -2,13 +2,17 @@ Title: About me
 Date: 14/12/2017
 Priority: 0
 
-<!--![Image](/images/photo.jpg)-->
+<table class="image">
+<caption align="bottom">I look approximately like this.</caption>
+<tr><td><img src="../images/photo.jpg" alt="drawing" width="200"/></td></tr>
+</table>
 
  I am Sayantan Khan, a graduate student in Mathematics at the University of Michigan
  (and previously an undergraduate at Indian Institute of Science).
  This website contains some things I occasionally
  write about, along with details of some of my
- past work, both in pure mathematics, as well as other areas.
+ past work, both in pure mathematics, as well as other areas. I also maintain
+ a [homepage](http://www-personal.umich.edu/~saykhan/) on the umich.edu domain.
 
 You can have a look at my past projects and presentations by clicking on the
  relevant link on the navigation bar.
@@ -42,7 +46,7 @@ rewrite on my blog.
 which dealt with the Laplacian on Riemannian manifolds.
 - [Notes](pdfs/ggd_notes/spherical_geometry.pdf) on spherical geometry I took
 at GGD 2017.
-- [Article](pdfs/articles/technical_results.pdf) containing some 
+- [Article](pdfs/articles/technical_results.pdf) containing some
   technical results in homotopy theory.
 - [Article](pdfs/articles/weyls.pdf) on Weyl's equidistribution theorem.
 - [Article](pdfs/articles/roths.pdf) on Roth's theorem on existence of
