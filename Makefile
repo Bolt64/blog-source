@@ -66,6 +66,9 @@ help:
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
+html_nix:
+	$(PELICAN) $(INPUTDIR) -o $(out) -s $(CONFFILE) $(PELICANOPTS)
+
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 	cp -r output.skel $(OUTPUTDIR)

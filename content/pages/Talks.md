@@ -2,9 +2,8 @@ Title: Talks
 Date: 14/12/2017
 Priority: 2
 
-I have only uploaded the slides for the talks I gave using a presentation
-software. For future talks, I'll upload my notes in case there are no
-slides to upload.
+I have only uploaded the slides for the talks I gave using a presentation software. My [university
+homepage](http://www-personal.umich.edu/~saykhan/talks.html) has a more up to date list of my talks.
 
 ### Constructing complex structures on surfaces
 This was a talk I gave at the Student Geometry/Topology Seminar at University of Michigan. Here
