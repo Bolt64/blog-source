@@ -7,10 +7,9 @@ You can contact me via email at either of the following addresses.
 - sayantangkhan@gmail.com
 - saykhan@umich.edu
 
-You can also have a look at my [GitHub profile](https://github.com/Bolt64).
+You can also have a look at my [GitHub profile](https://github.com/sayantangkhan).
 
-This is my PGP public key. It's also available on the SKS keyserver pool. This
-is the [link](http://pgp.mit.edu/pks/lookup?op=get&search=0xA3BA378D1ECE62AE).
+If you wish to contact me securely, here is my PGP key.
 ```
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 

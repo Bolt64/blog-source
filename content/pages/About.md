@@ -7,14 +7,10 @@ Priority: 0
 <tr><td><img src="../images/photo.jpg" alt="drawing" width="200"/></td></tr>
 </table>
 
- I am Sayantan Khan, a graduate student in Mathematics at the University of Michigan (and previously
- an undergraduate at Indian Institute of Science).  This website contains accounts of things I'm
- currently working on, along with details of some of my past work, both in pure mathematics, as well
- as other areas. I also maintain a [homepage](http://www-personal.umich.edu/~saykhan/) on the
- umich.edu domain.
-
-You can have a look at my past projects and presentations by clicking on the
- relevant link on the navigation bar.
+ I am Sayantan Khan, a graduate student in Mathematics at the University of Michigan (and previously an
+ undergraduate at Indian Institute of Science).  This website contains accounts of things I'm currently
+ working on, along with details of some of my past work. I also maintain a
+ [homepage](http://www-personal.umich.edu/~saykhan/) on the umich.edu domain.
 
 ### Timeline
 Here's a short description of some of the places I've been at since 2014.
@@ -39,19 +35,19 @@ as a DAAD-WISE Fellow.
 the [Physics of Life](https://theory.ncbs.res.in/physlife2016) Monsoon School.
 - **August 2014 - April 2018**: Mathematics major at Indian Institute of Science.
 
-### Quick links
+<!-- ### Quick links -->
 
-These are some articles and notes I have written in the past which I'm too lazy to rewrite on my
-blog. My [university homepage](http://www-personal.umich.edu/~saykhan/#notes) has a more up to date
-list of articles.
+<!-- These are some articles and notes I have written in the past which I'm too lazy to rewrite on my -->
+<!-- blog. My [university homepage](http://www-personal.umich.edu/~saykhan/notes.html) has a more up to date -->
+<!-- list of articles. -->
 
-- [Summary](pdfs/thesis_summary/thesis-summary.pdf) of my undergraduate final year project
-which dealt with the Laplacian on Riemannian manifolds.
-- [Notes](pdfs/ggd_notes/spherical_geometry.pdf) on spherical geometry I took
-at GGD 2017.
-- [Article](pdfs/articles/technical_results.pdf) containing some
-  technical results in homotopy theory.
-- [Article](pdfs/articles/weyls.pdf) on Weyl's equidistribution theorem.
-- [Article](pdfs/articles/roths.pdf) on Roth's theorem on existence of
-  three-term arithmetic progressions in positive density subsets of natural
-  numbers.
+<!-- - [Summary](pdfs/thesis_summary/thesis-summary.pdf) of my undergraduate final year project -->
+<!-- which dealt with the Laplacian on Riemannian manifolds. -->
+<!-- - [Notes](pdfs/ggd_notes/spherical_geometry.pdf) on spherical geometry I took -->
+<!-- at GGD 2017. -->
+<!-- - [Article](pdfs/articles/technical_results.pdf) containing some -->
+<!--   technical results in homotopy theory. -->
+<!-- - [Article](pdfs/articles/weyls.pdf) on Weyl's equidistribution theorem. -->
+<!-- - [Article](pdfs/articles/roths.pdf) on Roth's theorem on existence of -->
+<!--   three-term arithmetic progressions in positive density subsets of natural -->
+<!--   numbers. -->
