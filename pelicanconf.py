@@ -13,7 +13,7 @@ PLUGINS = ['render_math']
 
 PATH = 'content'
 
-TIMEZONE = 'Asia/Kolkata'
+TIMEZONE = 'America/Detroit'
 
 DEFAULT_LANG = 'en'
 
