@@ -4,7 +4,7 @@ tags: geometry, dynamics, topology
 category: mathematics
 date: 01-12-2020
 
-In the [previous post]({filename}/math/counting-orbit-points-3.md), we proved Sullivan's shadow lemma, which gave
+In the [previous post]({filename}/math/counting-orbit-points-2.md), we proved Sullivan's shadow lemma, which gave
 us concrete estimates for special subsets of the boundary, namely *shadows*. Recall that the shadow of a ball of
 radius $r$ based at $y$, with the source at $x$, denoted by $\mathcal{O}_r(x, y)$, is the set of all points $z$
 in the boundary $\partial \mathbb{H}^2$ such that a geodesic from $x$ to $z$ gets within distance $r$ of $y$. In the
