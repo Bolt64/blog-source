@@ -7,7 +7,7 @@ date: 09-26-2020
 Another 9 months have gone by without a blog post, and this time I don't even have lack of time as an excuse
 my lack of writing. This summer turned out to be quite different from what I had planned, which probably goes
 to show one shouldn't plan too far ahead, in this day and age. I figured it might be a good time make a list of
-what I did this summer, and contrast that with what I was planning to do, before I forget a the details.
+what I did this summer, and contrast that with what I was planning to do, before I forget the details.
 
 ## Math
 

@@ -7,7 +7,7 @@ INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
-GHDIR=~/blog/github-output
+GHDIR=~/Sync/blog/github-output
 TIMESTAMP=`date +'%y.%m.%d %H:%M:%S'`
 
 FTP_HOST=localhost
