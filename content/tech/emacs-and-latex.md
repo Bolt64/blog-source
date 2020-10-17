@@ -78,7 +78,7 @@ Your browser does not support the video tag.
 </table>
 
   <table class="image">
-<caption align="bottom">As soon as I write `\langle`, Emacs automatically creates the matching `rangle`.</caption>
+<caption align="bottom">As soon as I write `\langle`, Emacs automatically creates the matching `\rangle`.</caption>
 <tr><td>
  <video width="600" height="600" controls>
   <source src="../images/emacs-and-latex/part5.webm" type="video/webm">

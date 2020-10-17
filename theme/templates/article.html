@@ -2,19 +2,19 @@
 {% block title %}{{ SITENAME }} - {{ article.title }}{% endblock %}
 {% block content %}
     <div class='article'>
-        <div class="content-title">
-            <h1>{{ article.title }}</h1>
-            {% include "metadata.html" %}
-        </div>
-	
-        <div>{{ article.content }}</div>
-	
-        <hr>
+	<div class="content-title">
+	    <h1>{{ article.title }}</h1>
+	    {% include "metadata.html" %}
+	</div>
+
+	<div>{{ article.content }}</div>
+
+	<hr>
 
 	{% include "twitter.html" %}
-    {% if DISQUS_SITENAME %}
-        <h2>Comments</h2>
-        {% include "disqus.html" %}
+	{% if true %}
+	<h2>Comments</h2>
+	{% include "comments.html" %}
     {% endif %}
     </div>
 {% endblock %}
